@@ -28,6 +28,7 @@ volumes:[
       container('golang') {
         sh "go test -v -race ./..."
         sh "make bootstrap build"
+        sh "docker -v"
       }
     }
   }
