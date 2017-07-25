@@ -34,6 +34,7 @@ volumes:[
 
       container('docker') {
         sh "docker -v"
+        sh "ls -als"
       }
     }      
   }
