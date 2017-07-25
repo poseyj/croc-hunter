@@ -24,12 +24,17 @@ volumes:[
     checkout scm
 
     stage ('compile and test') {
-
       container('golang') {
         sh "go test -v -race ./..."
         sh "make bootstrap build"
-        sh "docker -v"
       }
     }
+      
+    stage ('publish container') {
+
+      container('docker') {
+        sh "docker -v"
+      }
+    }      
   }
 }
